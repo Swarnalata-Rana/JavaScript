@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+</head>
+<body>
+    <script>
+        // URL of the API endpoint
+        const apiURL = 'https://jsonplaceholder.typicode.com/posts';
+
+        // Function to fetch data from the API
+        function fetchData() {
+            fetch(apiURL)
+                .then(response => {
+                    // Check if the response is okay (status code 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+                    // Parse the JSON from the response
+                    return response.json();
+                })
+                .then(data => {
+                    // Log the response data to the console
+                    console.log('Response Data:', data);
+                })
+                .catch(error => {
+                    // Log any errors to the console
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        }
+
+        // Call the fetchData function to make the GET request
+        fetchData();
+    </script>
+</body>
+</html>

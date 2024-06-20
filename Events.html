@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners Example</title>
+    <style>
+        #toggleDiv {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickButton">Click Me!</button>
+    <div id="hoverDiv">Hover over me to change my color!</div>
+    <input type="text" id="inputField" placeholder="Type something...">
+    <button id="toggleButton">Toggle Visibility</button>
+    <div id="toggleDiv">This is a toggleable div.</div>
+    <script src="script.js"></script>
+</body>
+
+<script>
+    // Task 1: Add a click event listener to the button that logs "Button clicked!" to the console
+const clickButton = document.getElementById('clickButton');
+clickButton.addEventListener('click', () => {
+    console.log('Button clicked!');
+});
+
+// Task 2: Add a mouseover event listener to the div that changes the text color to red
+const hoverDiv = document.getElementById('hoverDiv');
+hoverDiv.addEventListener('mouseover', () => {
+    hoverDiv.style.color = 'red';
+});
+hoverDiv.addEventListener('mouseout', () => {
+    hoverDiv.style.color = ''; // Reset to original color when mouse is not over
+});
+
+// Task 3: Add an input event listener to the input that logs the input value to the console
+const inputField = document.getElementById('inputField');
+inputField.addEventListener('input', (event) => {
+    console.log(event.target.value);
+});
+
+// Task 4: Add a click event listener to the button that toggles the visibility of the div
+const toggleButton = document.getElementById('toggleButton');
+const toggleDiv = document.getElementById('toggleDiv');
+toggleButton.addEventListener('click', () => {
+    if (toggleDiv.style.display === 'none' || toggleDiv.style.display === '') {
+        toggleDiv.style.display = 'block';
+    } else {
+        toggleDiv.style.display = 'none';
+    }
+});
+
+</script>
+</html>

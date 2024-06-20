@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Content</title>
+</head>
+<body>
+    <p id="myParagraph">Original Text</p>
+    <div id="myDiv">Original Text</div>
+    <p id="myParagraph">This is a paragraph.</p>
+    <a id="myLink" href="https://www.google.com/">Hello Please Go to Google</a>
+    <div id="myDiv">This is a element.</div>
+    <script>
+        document.getElementById("myParagraph").textContent = "New Text";
+        document.getElementById("myDiv").innerHTML = "<b>New Text</b>";
+        document.getElementById("myParagraph").style.color = "red";
+        document.getElementById("myLink").href = "https://www.facebook.com/";
+        document.getElementById("myDiv").classList.add("myClass");
+    </script>
+</body>
+</html>
